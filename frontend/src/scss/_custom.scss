@@ -1,0 +1,182 @@
+// Warna utama
+$primary-color: #a31d1d;
+$hover-color: #c72c2c;
+$active-color: #8b1616;
+$white-color: #ffffff;
+
+// Sidebar styling
+.sidebar {
+  background-color: $primary-color;
+  border-color: $primary-color;
+
+  .nav-link {
+    color: $white-color;
+    border-color: $primary-color;
+
+    &:hover {
+      background-color: $hover-color;
+      border-color: $hover-color;
+    }
+
+    &.active {
+      background-color: $active-color;
+      border-color: $active-color;
+    }
+
+    .nav-icon {
+      color: $white-color;
+    }
+  }
+
+  .nav-group-items,
+  .nav-group {
+    border-color: $primary-color;
+  }
+}
+
+// Header styling
+.header {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: $white-color;
+
+  .nav-link,
+  .header-nav .btn {
+    color: $white-color;
+    border-color: $primary-color;
+
+    &:hover {
+      background-color: $hover-color;
+      border-color: $hover-color;
+    }
+
+    &.active {
+      background-color: $active-color;
+      border-color: $active-color;
+    }
+  }
+
+  .nav-icon {
+    color: $white-color;
+  }
+
+  .dropdown-menu {
+    background-color: $primary-color;
+    border-color: $primary-color;
+
+    .dropdown-item {
+      color: $white-color;
+      border-color: $primary-color;
+
+      &:hover {
+        background-color: $hover-color;
+        border-color: $hover-color;
+      }
+
+      &.active {
+        background-color: $active-color;
+        border-color: $active-color;
+      }
+    }
+  }
+}
+
+// Border top untuk sidebar dan header
+.sidebar,
+.header {
+  border-top-color: $primary-color;
+}
+
+.border-end {
+  border-right-color: $active-color;
+}
+
+.border-bottom {
+  border-bottom-color: $active-color;
+}
+
+.bg-body-secondary {
+  background-color: blue;
+}
+
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm,
+.container {
+  max-width: 100%;
+}
+// halaman status mesin
+.card-header-machine-status {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: normal;
+  padding: 0.5rem 0;
+  text-align: center;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.machine-status-text {
+  color: white;
+  font-weight: 300;
+}
+
+.card-border-green {
+  border-color: var(--cui-success);
+}
+
+.card-border-red {
+  border-color: var(--cui-danger);
+}
+
+.card-border-warning {
+  border-color: var(--cui-warning); /* Menggunakan warna warning dari CoreUI */
+}
+
+.card-border-pink {
+  border-color: #fc38da; /* Warna untuk Little Stop (pink) */
+}
+
+.card-border-purple {
+  border-color: #c03fab; /* Warna untuk Line Stop (ungu) */
+}
+
+.card-border-secondary {
+  border-color: var(--cui-secondary); /* Warna abu tua untuk Power Off */
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.custom-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-body {
+  flex-grow: 1;
+}
+
+//bar pada proses
+.progress-thin-proses {
+  height: 10px;
+}
+
+.text-white {
+  --cui-text-opacity: 1;
+  color: var(--cui-card-color);
+}
+
+// styles.scss or your custom SCSS file
+.progress,
+.progress-stacked-production {
+  --cui-progress-height: 3rem; // Set the height to 50rem
+}
