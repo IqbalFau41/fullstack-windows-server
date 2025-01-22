@@ -19,8 +19,8 @@ import { cilLockLocked, cilUser } from '@coreui/icons'
 
 const Register = () => {
   const [data, setData] = useState({
-    firstName: '',
-    lastName: '',
+    Nrp: '',
+    UserName: '',
     email: '',
     password: '',
   })
@@ -62,9 +62,9 @@ const Register = () => {
                     <CFormInput
                       type="text"
                       placeholder="NRP"
-                      name="firstName"
+                      name="Nrp"
                       onChange={handleChange}
-                      value={data.firstName}
+                      value={data.Nrp}
                       required
                     />
                   </CInputGroup>
@@ -75,9 +75,9 @@ const Register = () => {
                     <CFormInput
                       type="text"
                       placeholder="Nama Lengkap"
-                      name="lastName"
+                      name="UserName"
                       onChange={handleChange}
-                      value={data.lastName}
+                      value={data.UserName}
                       required
                     />
                   </CInputGroup>

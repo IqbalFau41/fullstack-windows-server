@@ -16,7 +16,7 @@ const generateAuthToken = (userId) => {
 const addUser  = async (userData) => {
   try {
     const hashedPassword = await bcrypt.hash(userData.password, 10); // Hash the password
-    const result = await sql.query`INSERT INTO Users (firstName, lastName, email, password) VALUES (${userData.firstName}, ${userData.lastName}, ${userData.email}, ${hashedPassword})`;
+    const result = await sql.query`INSERT INTO Users (Nrp, UserName, email, password) VALUES (${userData.Nrp}, ${userData.UserName}, ${userData.email}, ${hashedPassword})`;
     return { id: result.rowsAffected[0], token: generateAuthToken(userData.email) };
   } catch (error) {
     console.error("Error adding user:", error.message);
@@ -27,8 +27,8 @@ const addUser  = async (userData) => {
 // Function to validate user data for registration
 const validateUser  = (data) => {
   const schema = Joi.object({
-    firstName: Joi.string().required().label("First Name"),
-    lastName: Joi.string().required().label("Last Name"),
+    Nrp: Joi.string().required().label("First Name"),
+    UserName: Joi.string().required().label("Last Name"),
     email: Joi.string().required().email().label("Email"),
     password: passwordComplexity().required().label("Password"),
   });
@@ -47,9 +47,9 @@ const findUser_ByEmail = async (email) => {
 };
 
 // Function to find a user by first name and email
-const findUser_ByNameAndEmail = async (firstName, email) => {
+const findUser_ByNameAndEmail = async (Nrp, email) => {
   try {
-    const result = await sql.query`SELECT * FROM Users WHERE firstName = ${firstName} AND email = ${email}`;
+    const result = await sql.query`SELECT * FROM Users WHERE Nrp = ${Nrp} AND email = ${email}`;
     return result.recordset[0]; // Return the first user found
   } catch (error) {
     console.error("Error finding user:", error.message);
@@ -65,7 +65,7 @@ const comparePasswords = async (plainPassword, hashedPassword) => {
 // Function to validate user data for login
 const validateLogin = (data) => {
   const schema = Joi.object({
-    firstName: Joi.string().required().label("First Name"),
+    Nrp: Joi.string().required().label("First Name"),
     email: Joi.string().required().email().label("Email"),
   });
   return schema.validate(data);

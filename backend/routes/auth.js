@@ -14,7 +14,7 @@ router.post("/login", async (req, res) => {
     if (error) return res.status(400).send({ message: error.details[0].message });
 
     // Find the user by first name and email
-    const user = await findUser_ByNameAndEmail(req.body.firstName, req.body.email);
+    const user = await findUser_ByNameAndEmail(req.body.Nrp, req.body.email);
     console.log("User  found:", user); // Log the user object for debugging
 
     // Check if user exists

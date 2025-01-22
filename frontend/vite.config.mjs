@@ -11,9 +11,7 @@ export default defineConfig(() => {
     },
     css: {
       postcss: {
-        plugins: [
-          autoprefixer({}), // add options if needed
-        ],
+        plugins: [autoprefixer({})],
       },
       preprocessorOptions: {
         scss: {
@@ -47,8 +45,13 @@ export default defineConfig(() => {
     },
     server: {
       port: 3001,
+      host: true, // Mengikat ke semua alamat IP
       proxy: {
-        // https://vitejs.dev/config/server-options.html
+        '/api': {
+          target: 'http://10.41.39.118:3001/',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, ''),
+        },
       },
     },
   }

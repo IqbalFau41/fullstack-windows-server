@@ -1,7 +1,7 @@
 // src/views/pages/login/Login.js
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import {
   CButton,
   CCard,
@@ -14,39 +14,38 @@ import {
   CInputGroup,
   CInputGroupText,
   CRow,
-} from '@coreui/react';
-import CIcon from '@coreui/icons-react';
-import { cilLockLocked, cilUser  } from '@coreui/icons';
+} from '@coreui/react'
+import CIcon from '@coreui/icons-react'
+import { cilLockLocked, cilUser } from '@coreui/icons'
 
 const Login = () => {
-  const [data, setData] = useState({ firstName: '', email: '' });
-  const [error, setError] = useState('');
-  const navigate = useNavigate(); // Hook to programmatically navigate
+  const [data, setData] = useState({ Nrp: '', email: '' })
+  const [error, setError] = useState('')
+  const navigate = useNavigate() // Hook to programmatically navigate
 
   const handleChange = ({ currentTarget: input }) => {
-    setData({ ...data, [input.name]: input.value });
-  };
-
+    setData({ ...data, [input.name]: input.value })
+  }
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
-      const url = 'http://localhost:8080/api/auth/login'; // Update with your backend URL
-      const response = await axios.post(url, data);
-      
-      // Assuming the backend returns a token
-      const { token } = response.data; // Adjust based on your backend response structure
-      localStorage.setItem('token', token); // Store the token in local storage
+      const url = 'http://10.41.39.118:8080/api/auth/login' // Ganti dengan IP backend Anda
+      const response = await axios.post(url, data)
 
-      // Redirect to the dashboard
-      navigate('/dashboard'); // Change to your dashboard route
+      // Pastikan backend mengembalikan token
+      const { token } = response.data // Sesuaikan dengan struktur respons backend
+      localStorage.setItem('token', token) // Simpan token di local storage
+
+      // Redirect ke dashboard
+      navigate('/dashboard') // Ganti dengan route dashboard Anda
     } catch (error) {
       if (error.response && error.response.status >= 400 && error.response.status <= 500) {
-        setError(error.response.data.message); // Set error message from response
+        setError(error.response.data.message) // Set pesan kesalahan dari respons
       } else {
-        setError('An unexpected error occurred.'); // Generic error message
+        setError('An unexpected error occurred.') // Pesan kesalahan umum
       }
     }
-  };
+  }
 
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
@@ -79,13 +78,14 @@ const Login = () => {
                       <CFormInput
                         type="Password"
                         placeholder="Password"
-                        name="firstName"
+                        name="Nrp"
                         onChange={handleChange}
-                        value={data.firstName}
+                        value={data.Nrp}
                         required
                       />
                     </CInputGroup>
-                    {error && <div className="text-danger">{error}</div>} {/* Display error message */}
+                    {error && <div className="text-danger">{error}</div>}{' '}
+                    {/* Display error message */}
                     <CRow>
                       <CCol xs={6}>
                         <CButton type="submit" color="primary" className="px-4">
@@ -108,9 +108,8 @@ const Login = () => {
                   <div>
                     <h2>Monitoring System IOT</h2>
                     <p>by: Manufakturing Engineering</p>
-                    <p>
-                      Kepuasan Pelanggan Adalah Hal Yang Utama
-                    </p>
+                    <h2></h2>
+                    <p>Kepuasan Pelanggan Adalah Hal Yang Utama</p>
                     <p>PT. Musashi Auto Part Indonesia</p>
                   </div>
                 </CCardBody>
@@ -120,7 +119,7 @@ const Login = () => {
         </CRow>
       </CContainer>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

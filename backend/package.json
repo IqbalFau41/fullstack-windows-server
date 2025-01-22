@@ -18,8 +18,6 @@
     "joi": "^17.6.0",
     "joi-password-complexity": "^5.1.0",
     "jsonwebtoken": "^8.5.1",
-    "mongodb": "^6.12.0",
-    "mongoose": "^6.13.8",
     "mssql": "^11.0.1"
   },
   "devDependencies": {
