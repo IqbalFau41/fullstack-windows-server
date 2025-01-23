@@ -45,7 +45,7 @@ const Tool_Control = React.lazy(() => import('./views/tool_control/Tool_Control.
 const Kanagata = React.lazy(() => import('./views/kanagata/Kanagata.js'))
 
 // Maintenance
-const FormControl = React.lazy(() => import('./views/maintenance/form-control/FormControl'))
+const Sparepart = React.lazy(() => import('./views/manufacturing/sparepart/Sparepart.js'))
 const Select = React.lazy(() => import('./views/maintenance/select/Select'))
 
 // Timeline Project
@@ -93,9 +93,9 @@ const routes = [
   { path: '/tool_control', name: 'Tool_Control', element: Tool_Control },
   //Kanagata
   { path: '/kanagata', name: 'Kanagata', element: Kanagata },
-  //Manufakturing Eng
-  { path: '/maintenance', name: 'Maintenance', element: FormControl, exact: true },
-  { path: '/maintenance/form-control', name: 'Form Control', element: FormControl },
+
+  //Manufacturing
+  { path: '/manufacturing/sparepart', name: 'Sparepart', element: Sparepart },
   { path: '/maintenance/select', name: 'Select', element: Select },
 
   //Timeline Project

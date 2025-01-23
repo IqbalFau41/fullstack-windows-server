@@ -94,7 +94,7 @@ const _nav = [
       {
         component: CNavItem,
         name: 'SSM',
-        to: '/cikarang/tables',
+        to: '/cikarang/ssm',
       },
     ],
   },
@@ -158,13 +158,13 @@ const _nav = [
   },
   {
     component: CNavGroup,
-    name: 'Maintenance',
+    name: 'Manufacturing Eng',
     icon: <CIcon icon={cilNotes} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
-        name: 'Schedule Preventif',
-        to: '/maintenance/form-control',
+        name: 'Sparpart',
+        to: '/manufacturing/sparepart',
       },
       {
         component: CNavItem,
@@ -192,11 +192,6 @@ const _nav = [
         component: CNavItem,
         name: 'Login',
         to: '/login',
-      },
-      {
-        component: CNavItem,
-        name: 'Register',
-        to: '/register',
       },
       {
         component: CNavItem,

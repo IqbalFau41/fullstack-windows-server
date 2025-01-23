@@ -1,4 +1,3 @@
-// db.js
 const sql = require("mssql");
 require("dotenv").config();
 
@@ -10,7 +9,7 @@ module.exports = async () => {
     database: process.env.DB_DATABASE,
     port: parseInt(process.env.DB_PORT) || 1433,
     options: {
-      encrypt: true, // Use this if you're on Azure
+      encrypt: true,
       trustServerCertificate: true,
     },
   };

@@ -92,13 +92,6 @@ const Login = () => {
                           Login
                         </CButton>
                       </CCol>
-                      <CCol xs={6} className="text-right">
-                        <Link to="/register">
-                          <CButton color="link" className="px-0">
-                            Register Now!
-                          </CButton>
-                        </Link>
-                      </CCol>
                     </CRow>
                   </CForm>
                 </CCardBody>
